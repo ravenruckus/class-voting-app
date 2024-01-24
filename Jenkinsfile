@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	tools {
-		maven 'maven 3.6.1'
+		nodejs 'NodeJS 19.0.1'
 	}
 	
 	stages {
@@ -13,7 +13,7 @@ pipeline {
 		    	steps {
 				echo 'Compiling result app..'
 				dir('result') {
-					npm 'install'
+					sh 'npm install'
 				}
 			}
 		}
@@ -24,19 +24,14 @@ pipeline {
 			steps {
 				echo 'Running Unit Tests on result app..'
 				dir('result') {
-					npm 'install'
-                    			npm 'test'
+					sh 'npm install'
+                    			sh 'npm test'
              
 				}
 			}
 		}
 	}
 	
-	post {
-		always {
-			echo 'Building multibranch pipeline for result is completed..'
-		}
-	}
 }	
 
 
