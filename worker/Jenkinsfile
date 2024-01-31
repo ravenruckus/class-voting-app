@@ -76,6 +76,7 @@ pipeline {
                   workerImage.push("${env.BRANCH_NAME}")
                   workerImage.push("latest")
               }
+
             }
           }
       }
