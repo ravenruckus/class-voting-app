@@ -42,6 +42,7 @@ pipeline {
             agent any
             when{
                 changeset '**/result/**'
+		branch 'main'
             }
             steps{
                 echo 'Publishing result app with docker'
