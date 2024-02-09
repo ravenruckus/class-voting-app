@@ -215,6 +215,7 @@ pipeline {
         }
 
       }
+    }
 
     stage('deploy to dev'){
           agent any
